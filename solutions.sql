@@ -37,6 +37,8 @@ SELECT DISTINCT city FROM station WHERE id%2 LIKE 0
 /* https://www.hackerrank.com/challenges/weather-observation-station-4/problem */
 SELECT COUNT(city) - COUNT(DISTINCT city) FROM station
 
+/* https://www.hackerrank.com/challenges/weather-observation-station-5/problem */
+
 
 /* ------------------------------------------------------------------------------- */
 /* ------------------------------------------------------------------------------- */
