@@ -35,6 +35,8 @@ SELECT ROUND(SUM(lat_n), 2), ROUND(SUM(long_w), 2) FROM station
 SELECT DISTINCT city FROM station WHERE id%2 LIKE 0
 
 /* https://www.hackerrank.com/challenges/weather-observation-station-4/problem */
+SELECT COUNT(city) - COUNT(DISTINCT city) FROM station
+
 
 /* ------------------------------------------------------------------------------- */
 /* ------------------------------------------------------------------------------- */
