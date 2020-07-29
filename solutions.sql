@@ -38,7 +38,8 @@ SELECT DISTINCT city FROM station WHERE id%2 LIKE 0
 SELECT COUNT(city) - COUNT(DISTINCT city) FROM station
 
 /* https://www.hackerrank.com/challenges/weather-observation-station-5/problem */
-
+SELECT city, MIN(CHAR_LENGTH(city)) FROM station GROUP BY city ORDER BY CHAR_LENGTH(city), city LIMIT 1;
+SELECT city, MAX(CHAR_LENGTH(city)) FROM station GROUP BY city ORDER BY CHAR_LENGTH(city) DESC, city ASC LIMIT 1;
 
 /* ------------------------------------------------------------------------------- */
 /* ------------------------------------------------------------------------------- */
