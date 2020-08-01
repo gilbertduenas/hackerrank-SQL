@@ -45,12 +45,24 @@ SELECT city, MAX(CHAR_LENGTH(city)) FROM station GROUP BY city ORDER BY CHAR_LEN
 /* https://www.hackerrank.com/challenges/weather-observation-station-6/problem */
 SELECT DISTINCT city FROM station WHERE city REGEXP '^[AEIOU].*';
 
-SELECT DISTINCT city FROM station WHERE city LIKE 'A%'
-OR city LIKE 'E%'
-OR city LIKE 'I%'
-OR city LIKE 'O%'
-OR city LIKE 'U%';
-                             
+/* https://www.hackerrank.com/challenges/weather-observation-station-7/problem */
+SELECT DISTINCT city FROM station WHERE city REGEXP '[AEIOU]$';
+
+/* https://www.hackerrank.com/challenges/weather-observation-station-8/problem */
+SELECT DISTINCT city FROM station WHERE city REGEXP '^[AEIOU].*[AEIOU]$';
+
+/* https://www.hackerrank.com/challenges/weather-observation-station-9/problem */
+SELECT DISTINCT city FROM station WHERE city NOT REGEXP '^[AEIOU].*';
+
+/* https://www.hackerrank.com/challenges/weather-observation-station-10/problem */
+SELECT DISTINCT city FROM station WHERE city NOT REGEXP '[AEIOU]$';
+
+/* https://www.hackerrank.com/challenges/weather-observation-station-11/problem */
+SELECT DISTINCT city FROM station WHERE city NOT REGEXP '^[AEIOU].*[AEIOU]$';
+
+/* https://www.hackerrank.com/challenges/weather-observation-station-12/problem */
+SELECT DISTINCT city FROM station WHERE city REGEXP '^[^AEIOU].*[^AEIOU]$';
+
 /* ------------------------------------------------------------------------------- */
 /* ------------------------------------------------------------------------------- */
 /* ------------------------------------------------------------------------------- */
