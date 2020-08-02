@@ -68,9 +68,12 @@ SELECT DISTINCT city FROM station WHERE city REGEXP '^[^AEIOU].*[^AEIOU]$';
 /* https://www.hackerrank.com/challenges/more-than-75-marks/problem */
 SELECT name FROM students WHERE marks > 75 ORDER BY SUBSTR(name, -3), id;
 
+/* ------------------------------------------------------------------------------- */
 
+/* https://www.hackerrank.com/challenges/name-of-employees/problem */
+SELECT name FROM employee ORDER BY name ASC;
 
 /* ------------------------------------------------------------------------------- */
-/* ------------------------------------------------------------------------------- */
-/* ------------------------------------------------------------------------------- */
-/* ------------------------------------------------------------------------------- */
+
+/* https://www.hackerrank.com/challenges/salary-of-employees/problem */
+SELECT name FROM employee WHERE months < 10 and salary > 2000 ORDER BY employee_id;
