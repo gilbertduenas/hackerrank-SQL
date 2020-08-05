@@ -1,5 +1,8 @@
 /* ------------------------------------------------------------------------------- */
 
+/* https://www.hackerrank.com/challenges/average-population/problem */
+SELECT FLOOR(AVG(population)) FROM city;
+
 /* https://www.hackerrank.com/challenges/revising-aggregations-the-count-function/problem */
 SELECT COUNT(name) FROM city WHERE population > 100000;
 
