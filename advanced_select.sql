@@ -1,5 +1,11 @@
 /* ------------------------------------------------------------------------------- */
 
+/* https://www.hackerrank.com/challenges/the-pads/problem */
+SELECT CONCAT(name, '(', LEFT(occupation, 1), ')') FROM occupations ORDER BY name;
+SELECT CONCAT('There are a total of ', COUNT(occupation), ' ', LOWER(occupation), 's.') AS total_jobs FROM occupations GROUP BY occupation ORDER BY total_jobs;
+
+/* ------------------------------------------------------------------------------- */
+
 /* https://www.hackerrank.com/challenges/what-type-of-triangle/problem */
 SELECT 
 CASE 
@@ -13,11 +19,6 @@ CASE
 END
 FROM  triangles;
 
-/* ------------------------------------------------------------------------------- */
-
-/* https://www.hackerrank.com/challenges/the-pads/problem */
-SELECT CONCAT(name, '(', LEFT(occupation, 1), ')') FROM occupations ORDER BY name;
-SELECT CONCAT('There are a total of ', COUNT(occupation), ' ', LOWER(occupation), 's.') AS total_jobs FROM occupations GROUP BY occupation ORDER BY total_jobs;
 
 /* ------------------------------------------------------------------------------- */
 /* ------------------------------------------------------------------------------- */
