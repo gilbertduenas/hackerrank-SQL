@@ -77,14 +77,3 @@ SELECT name FROM employee ORDER BY name ASC;
 
 /* https://www.hackerrank.com/challenges/salary-of-employees/problem */
 SELECT name FROM employee WHERE months < 10 and salary > 2000 ORDER BY employee_id;
-
-/* ------------------------------------------------------------------------------- */
-
-/* https://www.hackerrank.com/challenges/revising-aggregations-the-count-function/problem */
-SELECT COUNT(name) FROM city WHERE population > 100000;
-
-/* https://www.hackerrank.com/challenges/revising-aggregations-sum/problem */
-SELECT SUM(population) FROM city WHERE district = 'California';
-
-/* https://www.hackerrank.com/challenges/revising-aggregations-the-average-function/problem */
-SELECT AVG(population) FROM city WHERE district = 'California';
