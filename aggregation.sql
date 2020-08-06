@@ -49,5 +49,6 @@ SELECT ROUND(long_w, 4) FROM station WHERE lat_n > 38.7780 ORDER BY lat_n ASC LI
 SELECT ROUND(ABS(MIN(lat_n) - MAX(lat_n)) + ABS(MIN(long_w) - MAX(long_w)), 4) FROM station;
 
 /* https://www.hackerrank.com/challenges/weather-observation-station-19/problem */
+SELECT ROUND(SQRT(POW((MIN(lat_n) - MAX(lat_n)), 2) + POW(ABS(MIN(long_w) - MAX(long_w)), 2)), 4) FROM station;
 
 /* https://www.hackerrank.com/challenges/weather-observation-station-20/problem */
