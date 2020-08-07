@@ -15,6 +15,16 @@ SELECT country.continent, FLOOR(AVG(city.population)) FROM city
 INNER JOIN country ON city.countrycode = country.code
 GROUP BY country.continent;
 
+/* https://www.hackerrank.com/challenges/the-report/problem */
+SELECT
+  CASE
+    WHEN grades.grade > 7 THEN students.name
+    ELSE 'NULL'
+  END,
+grades.grade, students.marks FROM students
+INNER JOIN grades
+ON students.marks BETWEEN grades.min_mark AND grades.max_mark
+ORDER BY grades.grade DESC, students.name, students.marks;
 
 /* ---------------------------------------------------------------------------------------------------------------------- */
 
