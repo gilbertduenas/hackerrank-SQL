@@ -52,3 +52,6 @@ SELECT ROUND(ABS(MIN(lat_n) - MAX(lat_n)) + ABS(MIN(long_w) - MAX(long_w)), 4) F
 SELECT ROUND(SQRT(POW((MIN(lat_n) - MAX(lat_n)), 2) + POW(ABS(MIN(long_w) - MAX(long_w)), 2)), 4) FROM station;
 
 /* https://www.hackerrank.com/challenges/weather-observation-station-20/problem */
+SELECT ROUND(S.lat_n, 4) FROM station S WHERE  
+(SELECT COUNT(lat_n) FROM station WHERE lat_n < S.lat_n) = 
+(SELECT COUNT(lat_n) FROM station WHERE lat_n > S.lat_n)
