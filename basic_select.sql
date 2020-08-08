@@ -76,6 +76,7 @@ ORDER BY CHAR_LENGTH(city),
          city
 LIMIT 1;
 
+
 SELECT city,
        MAX(CHAR_LENGTH(city))
 FROM station
@@ -117,3 +118,4 @@ WHERE city NOT REGEXP '^[AEIOU].*[AEIOU]$';
 SELECT DISTINCT city
 FROM station
 WHERE city REGEXP '^[^AEIOU].*[^AEIOU]$';
+
