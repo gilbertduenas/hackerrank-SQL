@@ -15,6 +15,9 @@ SELECT country.continent, FLOOR(AVG(city.population)) FROM city
 INNER JOIN country ON city.countrycode = country.code
 GROUP BY country.continent;
 
+/* https://www.hackerrank.com/challenges/full-score/problem */
+
+
 /* https://www.hackerrank.com/challenges/the-report/problem */
 SELECT
   CASE
