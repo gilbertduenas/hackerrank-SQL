@@ -48,7 +48,7 @@ SELECT *
 FROM city
 WHERE id = 1661;
 
- /* https://www.hackerrank.com/challenges/weather-observation-station-1/problem */
+/* https://www.hackerrank.com/challenges/weather-observation-station-1/problem */
 SELECT city,
        state
 FROM station;
