@@ -1,4 +1,4 @@
-/* ---------------------------------------------------------------------------------------------------------------------- */ /* https://www.hackerrank.com/challenges/japanese-cities-attributes/problem */
+/* https://www.hackerrank.com/challenges/japanese-cities-attributes/problem */
 SELECT *
 FROM city
 WHERE countrycode = 'JPN';
@@ -8,19 +8,19 @@ SELECT name
 FROM city
 WHERE countrycode = 'JPN';
 
-/* ---------------------------------------------------------------------------------------------------------------------- */ /* https://www.hackerrank.com/challenges/more-than-75-marks/problem */
+/* https://www.hackerrank.com/challenges/more-than-75-marks/problem */
 SELECT name
 FROM students
 WHERE marks > 75
 ORDER BY SUBSTR(name, -3),
          id;
 
-/* ---------------------------------------------------------------------------------------------------------------------- */ /* https://www.hackerrank.com/challenges/name-of-employees/problem */
+/* https://www.hackerrank.com/challenges/name-of-employees/problem */
 SELECT name
 FROM employee
 ORDER BY name ASC;
 
-/* ---------------------------------------------------------------------------------------------------------------------- */ /* https://www.hackerrank.com/challenges/revising-the-select-query/problem */
+/* https://www.hackerrank.com/challenges/revising-the-select-query/problem */
 SELECT *
 FROM city
 WHERE countrycode = 'USA'
@@ -32,14 +32,14 @@ FROM city
 WHERE countrycode = 'USA'
   AND population > 120000;
 
-/* ---------------------------------------------------------------------------------------------------------------------- */ /* https://www.hackerrank.com/challenges/salary-of-employees/problem */
+/* https://www.hackerrank.com/challenges/salary-of-employees/problem */
 SELECT name
 FROM employee
 WHERE months < 10
   AND salary > 2000
 ORDER BY employee_id;
 
-/* ---------------------------------------------------------------------------------------------------------------------- */ /* https://www.hackerrank.com/challenges/select-all-sql/problem */
+/* https://www.hackerrank.com/challenges/select-all-sql/problem */
 SELECT *
 FROM city;
 
@@ -48,7 +48,7 @@ SELECT *
 FROM city
 WHERE id = 1661;
 
-/* ---------------------------------------------------------------------------------------------------------------------- */ /* https://www.hackerrank.com/challenges/weather-observation-station-1/problem */
+ /* https://www.hackerrank.com/challenges/weather-observation-station-1/problem */
 SELECT city,
        state
 FROM station;
@@ -75,7 +75,6 @@ GROUP BY city
 ORDER BY CHAR_LENGTH(city),
          city
 LIMIT 1;
-
 
 SELECT city,
        MAX(CHAR_LENGTH(city))
@@ -118,4 +117,3 @@ WHERE city NOT REGEXP '^[AEIOU].*[AEIOU]$';
 SELECT DISTINCT city
 FROM station
 WHERE city REGEXP '^[^AEIOU].*[^AEIOU]$';
-
