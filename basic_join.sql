@@ -18,29 +18,50 @@ JOIN country ON city.countrycode = country.code
 GROUP BY country.continent;
 
 /* https://www.hackerrank.com/challenges/challenges/problem */
-SELECT C.hacker_id,
+SELECT H.hacker_id,
        H.name,
-       COUNT(C.hacker_id) AS counted
+       COUNT(C.challenge_id) AS C_id_count
 FROM hackers H
 JOIN challenges C ON H.hacker_id = C.hacker_id
-GROUP BY C.hacker_id
-HAVING counted =
+GROUP BY H.hacker_id,
+         H.name
+HAVING C_id_count =
   (SELECT MAX(max_count.counted_max)
    FROM
-     (SELECT COUNT(hacker_id) AS counted_max
+     (SELECT hacker_id,
+             COUNT(challenge_id) AS counted_max
       FROM challenges
       GROUP BY hacker_id
-      ORDER BY hacker_id) max_count)
-OR counted IN
+      ORDER BY counted_max) max_count)
+OR C_id_count IN
   (SELECT all_count.counted_all
    FROM
-     (SELECT COUNT(*) AS counted_all
+     (SELECT hacker_id,
+             COUNT(challenge_id) AS counted_all
       FROM challenges
-      GROUP BY hacker_id) all_count
+      GROUP BY hacker_id
+      ORDER BY counted_all) all_count
    GROUP BY all_count.counted_all
    HAVING COUNT(all_count.counted_all) = 1)
-ORDER BY counted DESC,
-         C.hacker_id;
+ORDER BY C_id_count DESC,
+         H.hacker_id;
+
+/* https://www.hackerrank.com/challenges/contest-leaderboard/problem */
+SELECT H.hacker_id,
+       H.name,
+       SUM(max_score) total_score
+FROM hackers H
+JOIN
+  (SELECT hacker_id,
+          MAX(score) max_score
+   FROM submissions
+   GROUP BY challenge_id,
+            hacker_id) S ON H.hacker_id = S.hacker_id
+GROUP BY H.hacker_id,
+         H.name
+HAVING total_score > 0
+ORDER BY total_score DESC,
+         H.hacker_id;
 
 /* https://www.hackerrank.com/challenges/full-score/problem */
 SELECT H.hacker_id,
