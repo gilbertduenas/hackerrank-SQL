@@ -20,7 +20,7 @@ GROUP BY country.continent;
 /* https://www.hackerrank.com/challenges/challenges/problem */
 SELECT H.hacker_id,
        H.name,
-       COUNT(C.challenge_id) AS C_id_count
+       COUNT(C.challenge_id) C_id_count
 FROM hackers H
 JOIN challenges C ON H.hacker_id = C.hacker_id
 GROUP BY H.hacker_id,
@@ -29,7 +29,7 @@ HAVING C_id_count =
   (SELECT MAX(max_count.counted_max)
    FROM
      (SELECT hacker_id,
-             COUNT(challenge_id) AS counted_max
+             COUNT(challenge_id) counted_max
       FROM challenges
       GROUP BY hacker_id
       ORDER BY counted_max) max_count)
@@ -37,7 +37,7 @@ OR C_id_count IN
   (SELECT all_count.counted_all
    FROM
      (SELECT hacker_id,
-             COUNT(challenge_id) AS counted_all
+             COUNT(challenge_id) counted_all
       FROM challenges
       GROUP BY hacker_id
       ORDER BY counted_all) all_count
@@ -86,8 +86,8 @@ JOIN wands_property P ON W.code = P.code
 WHERE is_evil = 0
   AND W.coins_needed =
     (SELECT MIN(coins_needed)
-     FROM WANDS AS W1
-     JOIN WANDS_PROPERTY AS P1 ON W1.code = P1.code
+     FROM WANDS W1
+     JOIN WANDS_PROPERTY P1 ON W1.code = P1.code
      WHERE W1.power = W.power
        AND P1.age = P.age)
 ORDER BY W.power DESC,
