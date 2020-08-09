@@ -3,7 +3,7 @@ SELECT FLOOR(AVG(population))
 FROM city;
 
 /* https://www.hackerrank.com/challenges/earnings-of-employees/problem */
-SELECT months * salary AS earnings,
+SELECT months * salary earnings,
        COUNT(*)
 FROM employee
 GROUP BY earnings
@@ -88,4 +88,3 @@ WHERE
     (SELECT COUNT(lat_n)
      FROM station
      WHERE lat_n > S.lat_n)
-     
