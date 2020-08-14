@@ -10,3 +10,5 @@ SET @star = 0;
 SELECT REPEAT('* ', @star := @star + 1)
 FROM information_schema.TABLES
 WHERE @star < 20;
+
+/* https://www.hackerrank.com/challenges/print-prime-numbers/problem */
