@@ -1,4 +1,11 @@
 /* https://www.hackerrank.com/challenges/binary-search-tree-1/problem */
+SELECT N,
+       IF(P IS NULL, 'Root', IF(
+                                  (SELECT COUNT(*)
+                                   FROM BST
+                                   WHERE P=B.N)>0, 'Inner', 'Leaf'))
+FROM BST AS B
+ORDER BY N;
 
 /* https://www.hackerrank.com/challenges/occupations */
 SELECT MAX(CASE
@@ -25,6 +32,24 @@ FROM
 GROUP BY ranked;
 
 /* https://www.hackerrank.com/challenges/the-company/problem */
+SELECT C.company_code,
+       C.founder,
+       COUNT(DISTINCT LM.lead_manager_code),
+       COUNT(DISTINCT SM.senior_manager_code),
+       COUNT(DISTINCT M.manager_code),
+       COUNT(DISTINCT E.employee_code)
+FROM company C,
+     lead_manager LM,
+     senior_manager SM,
+     manager M,
+     employee E
+WHERE C.company_code = LM.company_code
+  AND LM.lead_manager_code = SM.lead_manager_code
+  AND SM.senior_manager_code = M.senior_manager_code
+  AND M.manager_code = E.manager_code
+GROUP BY c.company_code,
+         c.founder
+ORDER BY C.company_code ASC;
 
 /* https://www.hackerrank.com/challenges/the-pads/problem */
 SELECT CONCAT(name, '(', LEFT(occupation, 1), ')')
