@@ -77,3 +77,4 @@ SELECT CASE
        END
 FROM triangles;
  
+/**/
