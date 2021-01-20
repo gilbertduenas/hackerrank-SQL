@@ -118,4 +118,6 @@ WHERE city NOT REGEXP '^[AEIOU].*[AEIOU]$';
 SELECT DISTINCT city
 FROM station
 WHERE city REGEXP '^[^AEIOU].*[^AEIOU]$';
-
+  
+  
+  
