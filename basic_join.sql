@@ -4,6 +4,19 @@ FROM city
 JOIN country ON city.countrycode = country.code
 WHERE country.continent = 'Africa';
 
+SELECT city.name
+FROM city,
+     country
+WHERE city.countrycode = country.code
+  AND country.continent = 'Africa';
+
+SELECT city.name
+FROM city
+WHERE city.countrycode IN
+    (SELECT country.code
+     FROM country
+     WHERE country.continent = 'Africa');
+
 /* https://www.hackerrank.com/challenges/asian-population/problem */
 SELECT SUM(city.population)
 FROM city
