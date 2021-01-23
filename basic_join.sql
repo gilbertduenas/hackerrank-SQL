@@ -28,6 +28,13 @@ FROM city, country
 WHERE city.countrycode = country.code
 AND country.continent = 'Asia';
 
+SELECT SUM(city.population)
+FROM city
+WHERE city.countrycode IN
+    (SELECT country.code
+     FROM country
+     WHERE country.continent = 'Asia');
+
 /* https://www.hackerrank.com/challenges/average-population-of-each-continent/problem */
 SELECT country.continent,
        FLOOR(AVG(city.population))
