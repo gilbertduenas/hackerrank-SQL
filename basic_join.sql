@@ -42,6 +42,12 @@ FROM city
 JOIN country ON city.countrycode = country.code
 GROUP BY country.continent;
 
+SELECT country.continent,
+       FLOOR(AVG(city.population))
+FROM city, country
+WHERE city.countrycode = country.code
+GROUP BY country.continent;
+                 
 /* https://www.hackerrank.com/challenges/challenges/problem */
 SELECT H.hacker_id,
        H.name,
