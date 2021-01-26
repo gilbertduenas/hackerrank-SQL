@@ -120,4 +120,4 @@ FROM station
 WHERE city REGEXP '^[^AEIOU].*[^AEIOU]$';
    
 
-                       
+              
