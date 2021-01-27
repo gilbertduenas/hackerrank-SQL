@@ -6,7 +6,7 @@ SELECT N,
                                    WHERE P=B.N)>0, 'Inner', 'Leaf'))
 FROM BST AS B
 ORDER BY N;
- 
+  
 /* https://www.hackerrank.com/challenges/occupations */
 SELECT MAX(CASE
                WHEN occupation = 'Doctor' THEN name
