@@ -1,6 +1,6 @@
 /* https://www.hackerrank.com/challenges/average-population/problem */
 SELECT FLOOR(AVG(population))
-FROM city;
+FROM city; 
 
 /* https://www.hackerrank.com/challenges/earnings-of-employees/problem */
 SELECT months * salary earnings,
