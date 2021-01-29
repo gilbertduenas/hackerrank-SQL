@@ -1,4 +1,4 @@
-/* https://www.hackerrank.com/challenges/binary-search-tree-1/problem */
+/* https://www.hackerrank.com/challenges/binary-search-tree-1/problem */  
 SELECT N,
        IF(P IS NULL, 'Root', IF(
                                   (SELECT COUNT(*)
@@ -78,3 +78,4 @@ SELECT CASE
 FROM triangles;
  
 /**/
+              
