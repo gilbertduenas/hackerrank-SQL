@@ -76,7 +76,6 @@ ORDER BY CHAR_LENGTH(city),
          city
 LIMIT 1;
 
-
 SELECT city,
        MAX(CHAR_LENGTH(city))
 FROM station
