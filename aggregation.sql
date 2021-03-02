@@ -88,5 +88,5 @@ WHERE
     (SELECT COUNT(lat_n)
      FROM station
      WHERE lat_n > S.lat_n)
-
+  
                                                               
